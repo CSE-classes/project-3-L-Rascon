@@ -29,7 +29,7 @@ void *producer(void *arg)
 {
     int ch;
 
-	FILE *fp = fopen("assignment2.txt", "r");
+	FILE *fp = fopen("message.txt", "r");
 	if (!fp)
     { 
         perror("fopen"); 
