@@ -14,7 +14,7 @@ student.
 #include <sys/param.h>
 #include <sched.h>
 
-#define K 200 // generate a data node for K times in each thread
+#define K 800 // generate a data node for K times in each thread
 
 struct Node
 {
