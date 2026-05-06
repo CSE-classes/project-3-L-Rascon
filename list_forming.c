@@ -90,13 +90,22 @@ void * producer_thread( void *arg)
                     tail->next = ptr;
                     tail= ptr;
                 }
-                pthread_mutex_unlock(&mutex_lock);
             }            
-            
         }
         ++counter;
     }
+
+    pthread_mutex_lock(&mutex_lock);
+
+    if(List->header == NULL)
+    {
+        List->header = head;
+        List->tail = tail;
+    }
+
+    pthread_mutex_unlock(&mutex_lock);
 }
+
 
 int main(int argc, char* argv[])
 {
