@@ -102,6 +102,11 @@ void * producer_thread( void *arg)
         List->header = head;
         List->tail = tail;
     }
+    else
+    {
+        List->tail->next = head;
+        List->tail = tail;
+    }
 
     pthread_mutex_unlock(&mutex_lock);
 }
